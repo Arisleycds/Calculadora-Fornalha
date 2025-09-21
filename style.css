@@ -1,0 +1,131 @@
+body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #222;
+    }
+
+    .scene {
+      perspective: 24000px;
+      /* controla a profundidade da cena */
+    }
+
+    .fornalha {
+      width: 400px;
+      height: 400px;
+      position: relative;
+      transform-style: preserve-3d;
+      /* rotação contínua */
+    }
+
+    .fornalha>div {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border: 2px solid #111;
+    }
+
+    .front {
+      display: flex;
+      background-image: url('./fornalha/frente.webp');
+      background-size: cover;
+      transform: rotateY(0deg) translateZ(200px);
+      flex-direction: column;
+
+    }
+
+    .front>div {
+      width: 100%;
+    }
+
+    .entrada {
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      height: 175px;
+    }
+
+    .saida {
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      height: 225px;
+    }
+
+    .display {
+      width: 90px;
+      height: 90px;
+
+      display: flex;
+      justify-content: end;
+      align-items: end;
+
+      background-size: cover;
+
+      border: 0px solid gray;
+      margin-bottom: 1px;
+    }
+
+    .entrada .display {
+      background-image: url("./itens/carne.png");
+
+      background-position-y: -40px;
+    }
+
+    .saida .display {
+      background-image: url("./itens/carvao.png");
+    }
+
+    .front>div .display:hover {
+      border: 1px solid white;
+      margin-bottom: 1px;
+    }
+
+    .front>div .display .inputs {
+      display: flex;
+      width: 100%;
+      justify-content: end;
+    }
+
+    .front>div .display .inputs input {
+      width: 50%;
+      opacity: 0.4;
+    }
+
+    .front>div .display:hover .inputs input {
+      opacity: 1;
+    }
+
+    .back {
+      transform: rotateY(180deg) translateZ(200px);
+    }
+
+    .right {
+      transform: rotateY(90deg) translateZ(200px);
+    }
+
+    .left {
+      transform: rotateY(-90deg) translateZ(200px);
+    }
+
+    .back,
+    .right,
+    .left {
+      background-image: url("./fornalha/laterais.jpeg");
+      background-size: cover;
+    }
+
+    .top {
+      transform: rotateX(90deg) translateZ(200px);
+    }
+
+    .bottom {
+      transform: rotateX(-90deg) translateZ(200px);
+    }
+
+    .top,
+    .bottom {
+      background-image: url("./fornalha/polos.jpeg");
+      background-size: cover;
+    }
